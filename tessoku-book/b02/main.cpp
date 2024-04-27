@@ -1,17 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int N, X, A[109];
-bool Answer = false;
-
 int main() {
     //入力
-    cin >> N >> X;
-    for (int i = 1; i <= N; i++) cin >> A[i];
+    int A, B;
+    cin >> A >> B;
 
     //全探索
-    for (int i = 1; i <= N; i++) {
-        if (A[i] == X) Answer = true;
+    bool Answer = false;
+    for (int i = A; i <= B; i++){
+        if (100 % i == 0) Answer = true;
     }
 
     //出力
