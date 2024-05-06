@@ -7,11 +7,11 @@ using namespace std;
 // ビット全探索を使う
 vector<long long> Enumerate(vector<long long> A) {
     vector<long long> SumList;
-    for (int i = 0; i < (1 << A.size()); i++) {
+    for (int i = 0; i < (1 << A.size()); i++) { // 入力例のN = 2の場合、for (int i = 0; i < (1 << 7); i++)
         long long sum = 0; //現在の合計値
         for (int j = 0; j < A.size(); j++) {
-            int wari = (1 << j);
-            if ((i / wari) % 2 == 1) sum += A[j];
+            // int wari = (1 << j);
+            if (i & (1 << j)) sum += A[j]; // N毎のカードを足し合わせるパターンを記録
         }
         SumList.push_back(sum);
     }
